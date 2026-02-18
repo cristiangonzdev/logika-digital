@@ -130,8 +130,33 @@ function initHeaderScroll() {
 }
 
 // ==========================================
-// SMOOTH SCROLL
+// SMOOTH SCROLL — Custom easing animation
 // ==========================================
+function easeInOutCubic(t) {
+    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+}
+
+function smoothScrollTo(targetY, duration = 900) {
+    const startY = window.pageYOffset;
+    const distance = targetY - startY;
+    let startTime = null;
+
+    function step(currentTime) {
+        if (!startTime) startTime = currentTime;
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const ease = easeInOutCubic(progress);
+
+        window.scrollTo(0, startY + distance * ease);
+
+        if (elapsed < duration) {
+            requestAnimationFrame(step);
+        }
+    }
+
+    requestAnimationFrame(step);
+}
+
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -146,12 +171,9 @@ function initSmoothScroll() {
             if (target) {
                 e.preventDefault();
                 const headerHeight = document.querySelector('.main-header')?.offsetHeight || 80;
-                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 8;
 
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
+                smoothScrollTo(targetPosition, 900);
             }
         });
     });
