@@ -159,6 +159,22 @@ function initScrollAnimations() {
     document.querySelectorAll('.fade-in-up').forEach(el => {
         observer.observe(el);
     });
+
+    // Mobile: add glow border to service cards on scroll (no hover on touch)
+    if (window.innerWidth <= 768) {
+        const glowObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('scroll-active');
+                    glowObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('.service-card').forEach(card => {
+            glowObserver.observe(card);
+        });
+    }
 }
 
 // ==========================================

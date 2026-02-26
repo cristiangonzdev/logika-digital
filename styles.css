@@ -920,6 +920,11 @@ section {
     animation: fadeInUp 0.8s ease-out forwards;
 }
 
+.service-card.scroll-active {
+    border-color: rgba(0, 217, 255, 0.35);
+    box-shadow: 0 10px 24px rgba(0, 217, 255, 0.12), 0 4px 10px rgba(0, 255, 136, 0.08);
+}
+
 /* ==========================================
    HAMBURGER MENU
    ========================================== */
