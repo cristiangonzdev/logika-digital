@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Cookies - Logika Digital</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: var(--color-navy);
+        }
+
+        .legal-hero {
+            position: relative;
+            padding: 160px 0 80px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .legal-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 40%, rgba(0, 217, 255, 0.12) 0%, transparent 50%), radial-gradient(circle at 70% 60%, rgba(0, 255, 136, 0.08) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .legal-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0, 217, 255, 0.3), rgba(0, 255, 136, 0.3), transparent);
+        }
+
+        .legal-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .legal-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto var(--spacing-lg);
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.15), rgba(0, 255, 136, 0.15));
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .legal-title {
+            font-size: var(--font-size-4xl);
+            font-weight: 800;
+            color: var(--color-white);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .legal-title span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .legal-updated {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: var(--font-size-sm);
+        }
+
+        .legal-body {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: var(--spacing-3xl) var(--spacing-lg) var(--spacing-4xl);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--color-electric-blue);
+            font-weight: 600;
+            font-size: var(--font-size-sm);
+            margin-bottom: var(--spacing-2xl);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            gap: 14px;
+            color: var(--color-neon-green);
+        }
+
+        .legal-section {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-lg);
+            transition: border-color 0.3s ease;
+        }
+
+        .legal-section:hover {
+            border-color: rgba(0, 217, 255, 0.2);
+        }
+
+        .legal-section h2 {
+            font-size: var(--font-size-xl);
+            color: var(--color-white);
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .legal-section h2 .section-num {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+        }
+
+        .legal-section h3 {
+            font-size: var(--font-size-lg);
+            color: rgba(255, 255, 255, 0.9);
+            margin: var(--spacing-md) 0 var(--spacing-sm);
+        }
+
+        .legal-section p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .legal-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .legal-section ul {
+            list-style: none;
+            padding: 0;
+            margin: var(--spacing-sm) 0;
+        }
+
+        .legal-section ul li {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            padding: 6px 0 6px 24px;
+            position: relative;
+        }
+
+        .legal-section ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 14px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+        }
+
+        .legal-section ul li strong {
+            color: var(--color-white);
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.08), rgba(0, 255, 136, 0.05));
+            border: 1px solid rgba(0, 217, 255, 0.25);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-md) 0;
+        }
+
+        .cookie-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--spacing-md) 0;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        .cookie-table th {
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.15), rgba(0, 255, 136, 0.1));
+            color: var(--color-white);
+            font-weight: 700;
+            padding: 14px 16px;
+            text-align: left;
+            font-size: var(--font-size-sm);
+            border-bottom: 1px solid rgba(0, 217, 255, 0.3);
+        }
+
+        .cookie-table td {
+            padding: 12px 16px;
+            color: rgba(255, 255, 255, 0.7);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: var(--font-size-sm);
+        }
+
+        .cookie-table tr:hover td {
+            background: rgba(0, 217, 255, 0.05);
+        }
+
+        .cookie-type-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge-tecnica {
+            background: rgba(0, 217, 255, 0.15);
+            color: var(--color-electric-blue);
+            border: 1px solid rgba(0, 217, 255, 0.3);
+        }
+
+        .badge-analitica {
+            background: rgba(0, 255, 136, 0.15);
+            color: var(--color-neon-green);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+        }
+
+        .browser-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+            margin: var(--spacing-md) 0;
+        }
+
+        .browser-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            text-align: center;
+            transition: border-color 0.3s;
+        }
+
+        .browser-item:hover {
+            border-color: rgba(0, 217, 255, 0.3);
+        }
+
+        .browser-item .browser-name {
+            color: var(--color-white);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .browser-item .browser-path {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: var(--font-size-xs);
+        }
+
+        @media (max-width:768px) {
+            .legal-hero {
+                padding: 130px 0 50px;
+            }
+
+            .legal-title {
+                font-size: var(--font-size-2xl);
+            }
+
+            .legal-body {
+                padding: var(--spacing-xl) var(--spacing-sm) var(--spacing-2xl);
+            }
+
+            .legal-section {
+                padding: var(--spacing-lg) var(--spacing-md);
+            }
+
+            .browser-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .cookie-table {
+                font-size: var(--font-size-xs);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="brand-logo" style="text-decoration:none;">
+                    <span class="logo-text">LOGIKA <span class="logo-gradient">DIGITAL</span></span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="legal-hero">
+        <div class="container">
+            <div class="legal-hero-content">
+                <div class="legal-icon">🍪</div>
+                <h1 class="legal-title">Política de <span>Cookies</span></h1>
+                <p class="legal-updated">Última actualización: Febrero 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="legal-body">
+        <a href="index.html" class="back-link">← Volver al inicio</a>
+
+        <div class="legal-section">
+            <h2><span class="section-num">01.</span> ¿Qué son las cookies?</h2>
+            <p>Las cookies son pequeños archivos de texto que los sitios web almacenan en tu dispositivo (ordenador,
+                tablet o móvil) cuando los visitas. Permiten que el sitio web recuerde tus acciones y preferencias
+                durante un período de tiempo, para que no tengas que configurarlas cada vez que regreses o navegues
+                entre páginas.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2><span class="section-num">02.</span> Cookies que utilizamos</h2>
+            <p>Actualmente, este sitio web utiliza únicamente cookies técnicas esenciales para su funcionamiento. No
+                utilizamos cookies de terceros para publicidad o análisis sin tu consentimiento previo.</p>
+            <table class="cookie-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Tipo</th>
+                        <th>Finalidad</th>
+                        <th>Duración</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code style="color:var(--color-electric-blue)">cookies_accepted</code></td>
+                        <td><span class="cookie-type-badge badge-tecnica">Técnica</span></td>
+                        <td>Recordar tu preferencia sobre el banner de cookies</td>
+                        <td>1 año</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="legal-section">
+            <h2><span class="section-num">03.</span> Tipos de cookies</h2>
+            <h3>🔧 Cookies técnicas (necesarias)</h3>
+            <p>Son estrictamente necesarias para el correcto funcionamiento del sitio web. Permiten la navegación y el
+                uso de las funcionalidades básicas. No requieren consentimiento.</p>
+            <h3>📊 Cookies de análisis (no activas)</h3>
+            <p>Permiten cuantificar el número de usuarios y realizar análisis estadísticos. Si en el futuro se
+                implementan, se instalarán solo con tu consentimiento expreso.</p>
+            <h3>📢 Cookies de publicidad (no utilizadas)</h3>
+            <p>No utilizamos cookies de publicidad ni de seguimiento comportamental en este sitio web.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2><span class="section-num">04.</span> Servicios de terceros</h2>
+            <p>Este sitio puede utilizar servicios de terceros que podrían instalar cookies en tu dispositivo:</p>
+            <ul>
+                <li><strong>Vercel (Hosting):</strong> Alojamiento del sitio web. Puede utilizar cookies técnicas para
+                    optimización y seguridad.</li>
+                <li><strong>EmailJS:</strong> Gestión del envío de formularios de contacto. No instala cookies de
+                    seguimiento.</li>
+                <li><strong>Google Fonts:</strong> Carga de fuentes tipográficas. No almacena cookies, solo carga
+                    recursos estáticos.</li>
+            </ul>
+        </div>
+
+        <div class="legal-section">
+            <h2><span class="section-num">05.</span> Gestión de cookies</h2>
+            <p>Puedes configurar tu navegador para aceptar o rechazar cookies, o para recibir un aviso antes de su
+                instalación:</p>
+            <div class="browser-grid">
+                <div class="browser-item">
+                    <div class="browser-name">🌐 Google Chrome</div>
+                    <div class="browser-path">Configuración → Privacidad</div>
+                </div>
+                <div class="browser-item">
+                    <div class="browser-name">🦊 Mozilla Firefox</div>
+                    <div class="browser-path">Opciones → Privacidad</div>
+                </div>
+                <div class="browser-item">
+                    <div class="browser-name">🧭 Safari</div>
+                    <div class="browser-path">Preferencias → Privacidad</div>
+                </div>
+                <div class="browser-item">
+                    <div class="browser-name">🔷 Microsoft Edge</div>
+                    <div class="browser-path">Configuración → Cookies</div>
+                </div>
+            </div>
+            <div class="info-card">
+                <p style="margin:0;"><strong style="color:var(--color-electric-blue);">⚠️ Importante:</strong> Si
+                    bloqueas todas las cookies, algunas funcionalidades del sitio web pueden no funcionar correctamente.
+                </p>
+            </div>
+        </div>
+
+        <div class="legal-section">
+            <h2><span class="section-num">06.</span> Desactivación y eliminación</h2>
+            <p>Puedes permitir, bloquear o eliminar las cookies instaladas en tu equipo mediante la configuración de tu
+                navegador. En caso de no permitir la instalación de cookies, es posible que no puedas acceder a alguna
+                de las funcionalidades del sitio web.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2><span class="section-num">07.</span> Actualización</h2>
+            <p>Es posible que actualicemos esta Política de Cookies. Te recomendamos revisarla cada vez que accedas a
+                nuestro sitio web para estar adecuadamente informado sobre cómo y para qué usamos las cookies.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2><span class="section-num">08.</span> Contacto</h2>
+            <p>Para cualquier duda sobre nuestra política de cookies:</p>
+            <div class="info-card">
+                <ul>
+                    <li><strong>Email:</strong> admin@logikateam.com</li>
+                    <li><strong>Web:</strong> https://logika-digital.vercel.app</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 class="footer-logo-text">LOGIKA <span class="footer-gradient">DIGITAL</span></h3>
+                    <p class="footer-tagline">Tu socio tecnológico de confianza</p>
+                </div>
+                <div class="footer-links">
+                    <a href="mailto:admin@logikateam.com" class="footer-link">Contacto</a>
+                    <a href="aviso-legal.html" class="footer-link">Aviso Legal</a>
+                    <a href="privacidad.html" class="footer-link">Política de Privacidad</a>
+                    <a href="cookies.html" class="footer-link">Política de Cookies</a>
+                </div>
+                <div class="footer-legal">
+                    <p>&copy; 2026 Logika Digital. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

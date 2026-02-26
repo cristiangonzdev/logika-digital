@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviso Legal - Logika Digital</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: var(--color-navy);
+        }
+
+        /* Legal page hero banner */
+        .legal-hero {
+            position: relative;
+            padding: 160px 0 80px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .legal-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 30% 40%, rgba(0, 217, 255, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(0, 255, 136, 0.08) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .legal-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0, 217, 255, 0.3), rgba(0, 255, 136, 0.3), transparent);
+        }
+
+        .legal-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .legal-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto var(--spacing-lg);
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.15), rgba(0, 255, 136, 0.15));
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .legal-title {
+            font-size: var(--font-size-4xl);
+            font-weight: 800;
+            color: var(--color-white);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .legal-title span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .legal-updated {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: var(--font-size-sm);
+        }
+
+        /* Legal content area */
+        .legal-body {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: var(--spacing-3xl) var(--spacing-lg) var(--spacing-4xl);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--color-electric-blue);
+            font-weight: 600;
+            font-size: var(--font-size-sm);
+            margin-bottom: var(--spacing-2xl);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            gap: 14px;
+            color: var(--color-neon-green);
+        }
+
+        .legal-section {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl) var(--spacing-xl);
+            margin-bottom: var(--spacing-lg);
+            transition: border-color 0.3s ease;
+        }
+
+        .legal-section:hover {
+            border-color: rgba(0, 217, 255, 0.2);
+        }
+
+        .legal-section h2 {
+            font-size: var(--font-size-xl);
+            color: var(--color-white);
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .legal-section h2 .section-num {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+        }
+
+        .legal-section p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .legal-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .legal-section ul {
+            list-style: none;
+            padding: 0;
+            margin: var(--spacing-sm) 0;
+        }
+
+        .legal-section ul li {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            padding: 6px 0 6px 24px;
+            position: relative;
+        }
+
+        .legal-section ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 14px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+        }
+
+        .legal-section ul li strong {
+            color: var(--color-white);
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.08), rgba(0, 255, 136, 0.05));
+            border: 1px solid rgba(0, 217, 255, 0.25);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-md) 0;
+        }
+
+        .info-card ul li::before {
+            background: var(--color-electric-blue);
+        }
+
+        @media (max-width: 768px) {
+            .legal-hero {
+                padding: 130px 0 50px;
+            }
+
+            .legal-title {
+                font-size: var(--font-size-2xl);
+            }
+
+            .legal-body {
+                padding: var(--spacing-xl) var(--spacing-sm) var(--spacing-2xl);
+            }
+
+            .legal-section {
+                padding: var(--spacing-lg) var(--spacing-md);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="brand-logo" style="text-decoration:none;">
+                    <span class="logo-text">LOGIKA <span class="logo-gradient">DIGITAL</span></span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="legal-hero">
+        <div class="container">
+            <div class="legal-hero-content">
+                <div class="legal-icon">⚖️</div>
+                <h1 class="legal-title">Aviso <span>Legal</span></h1>
+                <p class="legal-updated">Última actualización: Febrero 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <div class="legal-body">
+        <a href="index.html" class="back-link">← Volver al inicio</a>
+
+        <div class="legal-section">
+            <h2><span class="section-num">01.</span> Información General</h2>
+            <p>En cumplimiento de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de
+                Comercio Electrónico (LSSI-CE), se informa de los siguientes datos del titular de este sitio web:</p>
+            <div class="info-card">
+                <ul>
+                    <li><strong>Denominación social:</strong> Cristian Gonzalez Romero</li>
+                    <li><strong>NIF:</strong> 787662863T</li>
+                    <li><strong>Domicilio social:</strong> Calle Salazones n7, p 2</li>
+                    <li><strong>Correo electrónico:</strong> admin@logikateam.com</li>
+                    <li><strong>Sitio web:</strong> https://logika-digital.vercel.app</li>
+                    <li><strong>Actividad:</strong> Desarrollo de software, automatización de procesos empresariales e
+                        implementación de soluciones de inteligencia artificial</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="legal-section">
+            <h2><span class="section-num">02.</span> Objeto</h2>
+            <p>El presente aviso legal regula el acceso y uso del sitio web <strong
+                    style="color:var(--color-electric-blue)">https://logika-digital.vercel.app</strong> (en adelante,
+                "el sitio web"), del que es titular Logika Digital.</p>
+            <p>La navegación por este sitio web atribuye la condición de usuario del mismo e implica la aceptación plena
+                y sin reservas de todas y cada una de las disposiciones incluidas en este Aviso Legal, la Política de
+                Privacidad y la Política de Cookies, publicadas en el momento de la navegación.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2><span class="section-num">03.</span> Condiciones de Uso</h2>
+            <p>El usuario se compromete a hacer un uso adecuado de los contenidos y servicios que Logika Digital ofrece
+                a través de su sitio web y, con carácter enunciativo pero no limitativo, a no emplearlos para:</p>
+            <ul>
+                <li>Incurrir en actividades ilícitas, ilegales o contrarias a la buena fe y al orden público.</li>
+                <li>Difundir contenidos o propaganda de carácter racista, xenófobo, pornográfico-ilegal, de apología del
+                    terrorismo o atentatorio contra los derechos humanos.</li>
+                <li>Provocar daños en los sistemas físicos y lógicos de Logika Digital, de sus proveedores o de terceras
+                    personas, incluida la introducción o difusión en la red de virus informáticos.</li>
+                <li>Intentar acceder y, en su caso, utilizar las cuentas de correo electrónico de otros usuarios y
+                    modificar o manipular sus mensajes.</li>
+                <li>Utilizar el sitio web para realizar actuaciones de ingeniería inversa, descompilar o desensamblar
+                    cualquier software disponible.</li>
+            </ul>
+            <p>Logika Digital se reserva el derecho de retirar todos aquellos contenidos que vulneren las condiciones
+                aquí establecidas, así como de denegar el acceso al sitio web a usuarios que incumplan las mismas.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2><span class="section-num">04.</span> Propiedad Intelectual e Industrial</h2>
+            <p>Todos los contenidos del sitio web, salvo que se indique lo contrario, son titularidad exclusiva de
+                Logika Digital y, con carácter enunciativo, incluyen:</p>
+            <ul>
+                <li>Diseño gráfico, interfaz de usuario y código fuente del sitio web.</li>
+                <li>Logotipos, textos, gráficos, ilustraciones, fotografías y demás elementos visuales.</li>
+                <li>Documentación técnica, manuales y material de presentación de servicios.</li>
+                <li>Software propietario, algoritmos, flujos de automatización y agentes de IA desarrollados por Logika
+                    Digital.</li>
+            </ul>
+            <p>Quedan expresamente prohibidas la reproducción, distribución y comunicación pública, incluida la
+                modalidad de puesta a disposición, de la totalidad o parte de los contenidos de esta página web, con
+                fines comerciales, en cualquier soporte y por cualquier medio técnico, sin la autorización expresa y por
+                escrito de Logika Digital.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2><span class="section-num">05.</span> Limitación de Responsabilidad</h2>
+            <p>Logika Digital no se hace responsable, en ningún caso, de los daños y perjuicios de cualquier naturaleza
+                que pudieran ocasionar, a título meramente enunciativo:</p>
+            <ul>
+                <li>Errores u omisiones en los contenidos publicados en el sitio web.</li>
+                <li>Falta de disponibilidad del portal debido a mantenimiento, actualizaciones o causas de fuerza mayor.
+                </li>
+                <li>Transmisión de virus o programas maliciosos en los contenidos, a pesar de haber adoptado todas las
+                    medidas tecnológicas necesarias para evitarlo.</li>
+                <li>Uso indebido que los usuarios puedan hacer de los contenidos y servicios del sitio web.</li>
+            </ul>
+        </div>
+
+        <div class="legal-section">
+            <h2><span class="section-num">06.</span> Servicios Profesionales</h2>
+            <p>Logika Digital presta servicios profesionales de desarrollo de software, implementación de agentes de
+                inteligencia artificial, automatización de procesos empresariales y consultoría tecnológica. La
+                contratación de estos servicios se regirá por los términos y condiciones específicos que se establezcan
+                en cada propuesta o contrato individual.</p>
+            <p>Toda la información relativa a los servicios ofrecidos a través del sitio web tiene carácter meramente
+                informativo y no constituye una oferta contractual vinculante.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2><span class="section-num">07.</span> Enlaces</h2>
+            <p>En el caso de que en el sitio web se dispusieran enlaces o hipervínculos hacia otros sitios de Internet,
+                Logika Digital no ejercerá ningún tipo de control sobre dichos sitios y contenidos. En ningún caso
+                Logika Digital asumirá responsabilidad alguna por los contenidos de algún enlace perteneciente a un
+                sitio web ajeno, ni garantizará la disponibilidad técnica, calidad, fiabilidad, exactitud o veracidad de
+                cualquier material o información contenida en dichos enlaces.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2><span class="section-num">08.</span> Modificaciones</h2>
+            <p>Logika Digital se reserva el derecho a efectuar sin previo aviso las modificaciones que considere
+                oportunas en su sitio web, pudiendo cambiar, suprimir o añadir tanto los contenidos y servicios que se
+                presten a través de la misma como la forma en la que éstos aparezcan presentados o localizados. Se
+                recomienda al usuario revisar periódicamente este Aviso Legal.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2><span class="section-num">09.</span> Legislación Aplicable y Jurisdicción</h2>
+            <p>La relación entre Logika Digital y el usuario se regirá por la normativa española vigente. Para la
+                resolución de cualquier controversia, las partes se someten a los Juzgados y Tribunales de la ciudad de
+                Las Palmas de Gran Canaria, renunciando expresamente a cualquier otro fuero que pudiera corresponderles.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 class="footer-logo-text">LOGIKA <span class="footer-gradient">DIGITAL</span></h3>
+                    <p class="footer-tagline">Tu socio tecnológico de confianza</p>
+                </div>
+
+                <div class="footer-links">
+                    <a href="mailto:admin@logikateam.com" class="footer-link">Contacto</a>
+                    <a href="aviso-legal.html" class="footer-link">Aviso Legal</a>
+                    <a href="privacidad.html" class="footer-link">Política de Privacidad</a>
+                    <a href="cookies.html" class="footer-link">Política de Cookies</a>
+                </div>
+
+                <div class="footer-legal">
+                    <p>&copy; 2026 Logika Digital. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

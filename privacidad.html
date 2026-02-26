@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad - Logika Digital</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: var(--color-navy);
+        }
+
+        .legal-hero {
+            position: relative;
+            padding: 160px 0 80px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .legal-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 40%, rgba(0, 217, 255, 0.12) 0%, transparent 50%), radial-gradient(circle at 70% 60%, rgba(0, 255, 136, 0.08) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .legal-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0, 217, 255, 0.3), rgba(0, 255, 136, 0.3), transparent);
+        }
+
+        .legal-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .legal-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto var(--spacing-lg);
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.15), rgba(0, 255, 136, 0.15));
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .legal-title {
+            font-size: var(--font-size-4xl);
+            font-weight: 800;
+            color: var(--color-white);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .legal-title span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .legal-updated {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: var(--font-size-sm);
+        }
+
+        .legal-body {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: var(--spacing-3xl) var(--spacing-lg) var(--spacing-4xl);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--color-electric-blue);
+            font-weight: 600;
+            font-size: var(--font-size-sm);
+            margin-bottom: var(--spacing-2xl);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            gap: 14px;
+            color: var(--color-neon-green);
+        }
+
+        .legal-section {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-lg);
+            transition: border-color 0.3s ease;
+        }
+
+        .legal-section:hover {
+            border-color: rgba(0, 217, 255, 0.2);
+        }
+
+        .legal-section h2 {
+            font-size: var(--font-size-xl);
+            color: var(--color-white);
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .legal-section h2 .section-num {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+        }
+
+        .legal-section p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .legal-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .legal-section ul {
+            list-style: none;
+            padding: 0;
+            margin: var(--spacing-sm) 0;
+        }
+
+        .legal-section ul li {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            padding: 6px 0 6px 24px;
+            position: relative;
+        }
+
+        .legal-section ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 14px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+        }
+
+        .legal-section ul li strong {
+            color: var(--color-white);
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.08), rgba(0, 255, 136, 0.05));
+            border: 1px solid rgba(0, 217, 255, 0.25);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-md) 0;
+        }
+
+        .legal-section a {
+            color: var(--color-electric-blue);
+            text-decoration: underline;
+            transition: color 0.3s;
+        }
+
+        .legal-section a:hover {
+            color: var(--color-neon-green);
+        }
+
+        .rights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: var(--spacing-md);
+            margin: var(--spacing-md) 0;
+        }
+
+        .right-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+        }
+
+        .right-item strong {
+            color: var(--color-electric-blue);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .right-item p {
+            font-size: var(--font-size-sm);
+            margin: 0;
+        }
+
+        @media (max-width:768px) {
+            .legal-hero {
+                padding: 130px 0 50px;
+            }
+
+            .legal-title {
+                font-size: var(--font-size-2xl);
+            }
+
+            .legal-body {
+                padding: var(--spacing-xl) var(--spacing-sm) var(--spacing-2xl);
+            }
+
+            .legal-section {
+                padding: var(--spacing-lg) var(--spacing-md);
+            }
+
+            .rights-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="brand-logo" style="text-decoration:none;">
+                    <span class="logo-text">LOGIKA <span class="logo-gradient">DIGITAL</span></span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="legal-hero">
+        <div class="container">
+            <div class="legal-hero-content">
+                <div class="legal-icon">🔒</div>
+                <h1 class="legal-title">Política de <span>Privacidad</span></h1>
+                <p class="legal-updated">Última actualización: Febrero 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="legal-body">
+        <a href="index.html" class="back-link">← Volver al inicio</a>
+
+        <div class="legal-section">
+            <h2><span class="section-num">01.</span> Responsable del Tratamiento</h2>
+            <p>En cumplimiento del Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD), te informamos:
+            </p>
+            <div class="info-card">
+                <ul>
+                    <li><strong>Responsable:</strong> Cristian Gonzalez Romero (Logika Digital)</li>
+                    <li><strong>Domicilio:</strong> Calle Salazones n7, p 2</li>
+                    <li><strong>Email:</strong> admin@logikateam.com</li>
+                    <li><strong>Web:</strong> https://logika-digital.vercel.app</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="legal-section">
+            <h2><span class="section-num">02.</span> Finalidad del Tratamiento</h2>
+            <p>Los datos personales que nos proporciones serán tratados con las siguientes finalidades:</p>
+            <ul>
+                <li>Responder a tus consultas sobre nuestros servicios de desarrollo de software, automatización e IA.
+                </li>
+                <li>Gestionar la relación comercial y precontractual, incluyendo propuestas y presupuestos.</li>
+                <li>Realizar seguimiento de oportunidades comerciales para ofrecerte la mejor solución tecnológica.</li>
+                <li>Enviarte comunicaciones comerciales sobre nuestros servicios, solo con tu consentimiento expreso.
+                </li>
+            </ul>
+        </div>
+
+        <div class="legal-section">
+            <h2><span class="section-num">03.</span> Base Jurídica</h2>
+            <p>La base legal para el tratamiento de tus datos es:</p>
+            <ul>
+                <li><strong>Consentimiento:</strong> Al enviar el formulario de contacto y aceptar esta política.</li>
+                <li><strong>Ejecución de contrato:</strong> Para prestarte los servicios solicitados.</li>
+                <li><strong>Interés legítimo:</strong> Para mejorar nuestros servicios y la experiencia de usuario.</li>
+            </ul>
+        </div>
+
+        <div class="legal-section">
+            <h2><span class="section-num">04.</span> Datos Recopilados</h2>
+            <ul>
+                <li><strong>Datos identificativos:</strong> Nombre y/o empresa.</li>
+                <li><strong>Datos de contacto:</strong> Correo electrónico y teléfono.</li>
+                <li><strong>Datos de consulta:</strong> Descripción del proyecto o servicio que necesitas.</li>
+                <li><strong>Datos de navegación:</strong> IP, navegador y sistema operativo (anónimos).</li>
+            </ul>
+            <p>No recopilamos datos sensibles ni categorías especiales de datos personales.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2><span class="section-num">05.</span> Destinatarios</h2>
+            <ul>
+                <li><strong>EmailJS:</strong> Gestión del formulario de contacto.</li>
+                <li><strong>Vercel:</strong> Alojamiento web del sitio.</li>
+                <li><strong>Google Fonts:</strong> Visualización de fuentes (no almacena datos personales).</li>
+            </ul>
+            <p>No cedemos ni vendemos tus datos a terceros salvo obligación legal.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2><span class="section-num">06.</span> Conservación</h2>
+            <ul>
+                <li><strong>Consultas:</strong> Máximo 12 meses sin relación comercial.</li>
+                <li><strong>Relación comercial:</strong> Durante la vigencia del contrato y plazos legales.</li>
+                <li><strong>Obligaciones legales:</strong> Según normativa fiscal y mercantil aplicable.</li>
+            </ul>
+        </div>
+
+        <div class="legal-section">
+            <h2><span class="section-num">07.</span> Tus Derechos</h2>
+            <p>Puedes ejercer los siguientes derechos en cualquier momento:</p>
+            <div class="rights-grid">
+                <div class="right-item">
+                    <strong>📋 Acceso</strong>
+                    <p>Conocer qué datos tenemos sobre ti.</p>
+                </div>
+                <div class="right-item">
+                    <strong>✏️ Rectificación</strong>
+                    <p>Corregir datos inexactos o incompletos.</p>
+                </div>
+                <div class="right-item">
+                    <strong>🗑️ Supresión</strong>
+                    <p>Solicitar la eliminación de tus datos.</p>
+                </div>
+                <div class="right-item">
+                    <strong>⛔ Oposición</strong>
+                    <p>Oponerte al tratamiento de tus datos.</p>
+                </div>
+                <div class="right-item">
+                    <strong>🔄 Portabilidad</strong>
+                    <p>Recibir tus datos en formato estructurado.</p>
+                </div>
+                <div class="right-item">
+                    <strong>⏸️ Limitación</strong>
+                    <p>Limitar el tratamiento según normativa.</p>
+                </div>
+            </div>
+            <p>Contacta con nosotros en <strong style="color:var(--color-electric-blue);">admin@logikateam.com</strong>
+                para ejercer tus derechos.</p>
+            <p>También puedes reclamar ante la AEPD: <a href="https://www.aepd.es" target="_blank">www.aepd.es</a></p>
+        </div>
+
+        <div class="legal-section">
+            <h2><span class="section-num">08.</span> Seguridad</h2>
+            <p>Hemos adoptado medidas técnicas y organizativas apropiadas:</p>
+            <ul>
+                <li>Comunicaciones cifradas mediante HTTPS/TLS.</li>
+                <li>Control de acceso restringido a datos personales.</li>
+                <li>Revisión periódica de políticas de seguridad.</li>
+            </ul>
+        </div>
+
+        <div class="legal-section">
+            <h2><span class="section-num">09.</span> Transferencias Internacionales</h2>
+            <p>Algunos proveedores pueden estar fuera del EEE. Garantizamos la existencia de cláusulas contractuales
+                tipo aprobadas por la Comisión Europea o adhesión al Marco de Privacidad UE-EE.UU.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2><span class="section-num">10.</span> Actualización</h2>
+            <p>Nos reservamos el derecho a modificar esta política para adaptarla a novedades legislativas o de la
+                industria. Te recomendamos revisarla periódicamente.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2><span class="section-num">11.</span> Contacto</h2>
+            <p>Para cualquier duda sobre esta política:</p>
+            <div class="info-card">
+                <ul>
+                    <li><strong>Email:</strong> admin@logikateam.com</li>
+                    <li><strong>Web:</strong> https://logika-digital.vercel.app</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 class="footer-logo-text">LOGIKA <span class="footer-gradient">DIGITAL</span></h3>
+                    <p class="footer-tagline">Tu socio tecnológico de confianza</p>
+                </div>
+                <div class="footer-links">
+                    <a href="mailto:admin@logikateam.com" class="footer-link">Contacto</a>
+                    <a href="aviso-legal.html" class="footer-link">Aviso Legal</a>
+                    <a href="privacidad.html" class="footer-link">Política de Privacidad</a>
+                    <a href="cookies.html" class="footer-link">Política de Cookies</a>
+                </div>
+                <div class="footer-legal">
+                    <p>&copy; 2026 Logika Digital. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
