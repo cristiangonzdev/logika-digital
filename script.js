@@ -159,29 +159,6 @@ function initScrollAnimations() {
     document.querySelectorAll('.fade-in-up').forEach(el => {
         observer.observe(el);
     });
-
-    // Service cards scroll-triggered animation (great for mobile)
-    const serviceCardObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('scroll-pop');
-            } else {
-                entry.target.classList.remove('scroll-pop');
-            }
-        });
-    }, {
-        threshold: 0.4,
-        rootMargin: '0px'
-    });
-
-    document.querySelectorAll('.service-card').forEach(card => {
-        serviceCardObserver.observe(card);
-    });
-
-    // Also animate process steps
-    document.querySelectorAll('.process-step').forEach(step => {
-        serviceCardObserver.observe(step);
-    });
 }
 
 // ==========================================
