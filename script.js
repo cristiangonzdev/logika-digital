@@ -165,14 +165,12 @@ function initScrollAnimations() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('scroll-pop');
-                // Remove the class after animation so it can re-trigger
-                setTimeout(() => {
-                    entry.target.classList.remove('scroll-pop');
-                }, 600);
+            } else {
+                entry.target.classList.remove('scroll-pop');
             }
         });
     }, {
-        threshold: 0.5,
+        threshold: 0.4,
         rootMargin: '0px'
     });
 
