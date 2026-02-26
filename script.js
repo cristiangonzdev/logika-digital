@@ -21,7 +21,35 @@ document.addEventListener('DOMContentLoaded', () => {
     // Contact form handling
     initContactForm();
 
+    // Hamburger menu
+    initHamburgerMenu();
+
 });
+
+// ==========================================
+// HAMBURGER MENU
+// ==========================================
+function initHamburgerMenu() {
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const headerNav = document.getElementById('headerNav');
+
+    if (!hamburgerBtn || !headerNav) return;
+
+    hamburgerBtn.addEventListener('click', () => {
+        hamburgerBtn.classList.toggle('active');
+        headerNav.classList.toggle('open');
+        document.body.style.overflow = headerNav.classList.contains('open') ? 'hidden' : '';
+    });
+
+    // Close menu when clicking a nav link
+    headerNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburgerBtn.classList.remove('active');
+            headerNav.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+    });
+}
 
 // ==========================================
 // TOAST NOTIFICATION SYSTEM

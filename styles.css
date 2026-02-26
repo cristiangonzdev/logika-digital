@@ -920,11 +920,87 @@ section {
 }
 
 /* ==========================================
+   HAMBURGER MENU
+   ========================================== */
+.hamburger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 217, 255, 0.3);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    padding: 8px;
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.hamburger-btn:hover {
+    background: rgba(0, 217, 255, 0.1);
+    border-color: var(--color-electric-blue);
+}
+
+.hamburger-line {
+    width: 22px;
+    height: 2px;
+    background: var(--color-white);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger-btn.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-btn.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-btn.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ==========================================
    RESPONSIVE DESIGN
    ========================================== */
 @media (max-width: 768px) {
+    .hamburger-btn {
+        display: flex;
+    }
+
     .header-nav {
         display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(135deg, rgba(10, 22, 40, 0.98) 0%, rgba(26, 40, 64, 0.98) 100%);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: var(--spacing-xl);
+        z-index: 1000;
+        padding: var(--spacing-2xl);
+    }
+
+    .header-nav.open {
+        display: flex;
+    }
+
+    .header-nav .nav-link {
+        font-size: var(--font-size-2xl);
+        color: var(--color-white);
+    }
+
+    .header-nav .btn-secondary {
+        font-size: var(--font-size-xl);
+        padding: var(--spacing-md) var(--spacing-2xl);
     }
 
     .brand-logo svg {
