@@ -997,11 +997,24 @@ section {
     .header-nav .nav-link {
         font-size: var(--font-size-2xl);
         color: var(--color-white);
+        padding: var(--spacing-sm) 0;
     }
 
     .header-nav .btn-secondary {
-        font-size: var(--font-size-xl);
-        padding: var(--spacing-md) var(--spacing-2xl);
+        font-size: var(--font-size-2xl);
+        padding: var(--spacing-lg) var(--spacing-3xl);
+        background: var(--gradient-primary);
+        color: var(--color-navy);
+        border: none;
+        border-radius: var(--radius-lg);
+        font-weight: 700;
+        box-shadow: 0 8px 30px rgba(0, 217, 255, 0.3);
+        margin-top: var(--spacing-md);
+    }
+
+    .header-nav .btn-secondary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 40px rgba(0, 217, 255, 0.5);
     }
 
     .brand-logo svg {
@@ -1062,6 +1075,76 @@ section {
 
     .lead-magnet-card {
         padding: var(--spacing-xl);
+    }
+}
+
+/* ==========================================
+   FLOATING WHATSAPP BUTTON
+   ========================================== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    z-index: 999;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-float svg {
+    width: 32px;
+    height: 32px;
+    fill: white;
+}
+
+.whatsapp-float .tooltip {
+    position: absolute;
+    right: 70px;
+    background: var(--color-navy);
+    color: var(--color-white);
+    padding: 8px 14px;
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-float:hover .tooltip {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 54px;
+        height: 54px;
+    }
+
+    .whatsapp-float svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .whatsapp-float .tooltip {
+        display: none;
     }
 }
 
