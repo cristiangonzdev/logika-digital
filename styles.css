@@ -920,6 +920,27 @@ section {
     animation: fadeInUp 0.8s ease-out forwards;
 }
 
+/* Scroll-triggered pop animation for mobile */
+.scroll-pop {
+    animation: scrollPop 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes scrollPop {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(10, 22, 40, 0.15);
+        border-color: var(--color-electric-blue);
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
 /* ==========================================
    HAMBURGER MENU
    ========================================== */

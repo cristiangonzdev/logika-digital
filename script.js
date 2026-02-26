@@ -159,6 +159,31 @@ function initScrollAnimations() {
     document.querySelectorAll('.fade-in-up').forEach(el => {
         observer.observe(el);
     });
+
+    // Service cards scroll-triggered animation (great for mobile)
+    const serviceCardObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('scroll-pop');
+                // Remove the class after animation so it can re-trigger
+                setTimeout(() => {
+                    entry.target.classList.remove('scroll-pop');
+                }, 600);
+            }
+        });
+    }, {
+        threshold: 0.5,
+        rootMargin: '0px'
+    });
+
+    document.querySelectorAll('.service-card').forEach(card => {
+        serviceCardObserver.observe(card);
+    });
+
+    // Also animate process steps
+    document.querySelectorAll('.process-step').forEach(step => {
+        serviceCardObserver.observe(step);
+    });
 }
 
 // ==========================================
