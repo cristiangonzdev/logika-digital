@@ -112,23 +112,23 @@ function removeToast(toast) {
 // ==========================================
 // SMOOTH SCROLL (suave y estético)
 // ==========================================
-function smoothScrollTo(targetY, duration = 750) {
+function smoothScrollTo(targetY, duration = 1100) {
     const startY = window.pageYOffset;
     const distance = targetY - startY;
     let startTime = null;
 
-    // easeInOutCubic - suave al inicio y al final
-    function easeInOutCubic(t) {
+    // easeInOutQuint - arranque muy suave, frenado muy gradual
+    function easeInOutQuint(t) {
         return t < 0.5
-            ? 4 * t * t * t
-            : 1 - Math.pow(-2 * t + 2, 3) / 2;
+            ? 16 * t * t * t * t * t
+            : 1 - Math.pow(-2 * t + 2, 5) / 2;
     }
 
     function step(timestamp) {
         if (!startTime) startTime = timestamp;
         const elapsed = timestamp - startTime;
         const progress = Math.min(elapsed / duration, 1);
-        const ease = easeInOutCubic(progress);
+        const ease = easeInOutQuint(progress);
 
         window.scrollTo(0, startY + distance * ease);
 
