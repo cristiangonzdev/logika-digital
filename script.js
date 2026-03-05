@@ -112,7 +112,7 @@ function removeToast(toast) {
 // ==========================================
 // SMOOTH SCROLL (suave y estético)
 // ==========================================
-function smoothScrollTo(targetY, duration = 1100) {
+function smoothScrollTo(targetY, duration = 1600) {
     const startY = window.pageYOffset;
     const distance = targetY - startY;
     let startTime = null;
