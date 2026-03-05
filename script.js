@@ -110,8 +110,36 @@ function removeToast(toast) {
 }
 
 // ==========================================
-// SMOOTH SCROLL
+// SMOOTH SCROLL (suave y estético)
 // ==========================================
+function smoothScrollTo(targetY, duration = 750) {
+    const startY = window.pageYOffset;
+    const distance = targetY - startY;
+    let startTime = null;
+
+    // easeInOutCubic - suave al inicio y al final
+    function easeInOutCubic(t) {
+        return t < 0.5
+            ? 4 * t * t * t
+            : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    }
+
+    function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const elapsed = timestamp - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const ease = easeInOutCubic(progress);
+
+        window.scrollTo(0, startY + distance * ease);
+
+        if (progress < 1) {
+            requestAnimationFrame(step);
+        }
+    }
+
+    requestAnimationFrame(step);
+}
+
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -126,10 +154,9 @@ function initSmoothScroll() {
             const target = document.querySelector(href);
             if (target) {
                 e.preventDefault();
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                const headerOffset = 70;
+                const targetY = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+                smoothScrollTo(targetY, 750);
             }
         });
     });
@@ -199,7 +226,9 @@ function initCTATracking() {
                 // Smooth scroll to contact form
                 const contactSection = document.getElementById('contacto');
                 if (contactSection) {
-                    contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    const headerOffset = 70;
+                    const targetY = contactSection.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+                    smoothScrollTo(targetY, 750);
                 }
             });
         }
